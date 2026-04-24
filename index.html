@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Там | Онлайн Замовлення</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Coffee Там</div>
+        <nav>
+            <a href="#" onclick="showPage('home')">Головна</a>
+            <a href="#" onclick="showPage('menu')">Меню</a>
+            <a href="#" onclick="showPage('contacts')">Контакти</a>
+        </nav>
+    </header>
+
+    <section id="page-home" class="page active">
+        <main class="hero">
+            <div class="hero-content glass card">
+                <h1>Твоя ідеальна кава вже чекає Там</h1>
+                <p>Затишний куточок у серці Києва. Найкращі зерна та найсвіжіші десерти.</p>
+                <div class="auth-info">
+                    <p>Виконавець: <strong>Пригорницький Дмитро</strong></p>
+                    <p>Група: <strong>4-11</strong></p>
+                </div>
+                <button class="btn-main" onclick="showPage('menu')">Відкрити меню</button>
+            </div>
+        </main>
+    </section>
+
+    <section id="page-menu" class="page">
+        <div class="container">
+            <h1 class="menu-title">Наше Меню</h1>
+            <div id="menu-container" class="menu-grid"></div>
+            
+            <div id="checkout-bar" class="checkout-bar glass hidden">
+                <span>Разом: <strong id="total-price-bar">0</strong> грн</span>
+                <button class="btn-main" onclick="showCheckoutConfirmation()">Оформити замовлення</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-contacts" class="page">
+        <div class="container">
+            <h1 class="menu-title">Де ми знаходимось?</h1>
+            <div class="contacts-grid">
+                <div class="contact-card glass card">
+                    <h3>Адреса</h3>
+                    <p>м. Київ, вулиця Шолом-Алейхема, 6</p>
+                    <p><em>Працюємо: 08:00 - 21:00</em></p>
+                </div>
+                <div class="contact-card glass card">
+                    <h3>Зв'язок</h3>
+                    <p>Тел: +380 96 716 68 71</p>
+                    <p>Email: p.dima129856@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="order-modal" class="modal hidden">
+        <div class="modal-content glass">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            
+            <div id="modal-stage-cart">
+                <h2>Ваше замовлення</h2>
+                <div id="cart-items-list"></div>
+                <div class="total-line-modal">Разом: <span id="modal-total-price">0</span> грн</div>
+                <div class="modal-buttons">
+                    <button class="btn-secondary" onclick="closeModal()">Назад</button>
+                    <button class="btn-main" onclick="placeOrder()">Підтвердити</button>
+                </div>
+            </div>
+
+            <div id="modal-stage-status" class="hidden">
+                <h2>Статус замовлення <span id="order-id"></span></h2>
+                <div class="status-box">
+                    <div id="status-icon">⏳</div>
+                    <p id="status-text">Очікуємо підтвердження...</p>
+                </div>
+                <div class="progress-bar-container"><div id="progress-bar"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>&copy; Розробник Пригорницький Дмитро, група 4-11, 2026</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
